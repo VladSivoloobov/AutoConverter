@@ -9,7 +9,6 @@ const downloadDir = path.resolve(homeDir, "Downloads");
 fs.watch(downloadDir, (_, fileName) => {
   if (!fileName.match(/.png|.jpeg|.jpg/)) return;
   else if (fileName.match(/.crdownload/)) return;
-  console.log(fileName.match(/.png|.jpeg|.jpg/));
   const filePath = path.resolve(downloadDir, fileName);
   const convertedImagesFolder = path.resolve(downloadDir, "Converted Images");
   if (!fs.existsSync(convertedImagesFolder)) {
